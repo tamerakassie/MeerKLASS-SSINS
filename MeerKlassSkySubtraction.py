@@ -113,6 +113,35 @@ def MaskedArrayVisibilityFlags(vis, flags, nd_s0):
     return data_masked
 
 
+def SkySubtraction(data_masked):
+
+    """
+    Function Returns differencing of the  visibility masked array.
+    """
+
+    vis_ss =data_masked[1:,:] - data_masked[0:-1,:]
+    visSS=vis_ss.filled()
+
+    return visSS
+
+def AveSkySubtraction(visSS):
+
+    """
+    Function reshapes the array into a cube, along the first dimension the lenght of good antennas are appended this is do to compute the averaging over the dishes.
+    """
+
+    visSSreshaped = visSS.reshape((1, *visSS.shape))
+    visSS_Ave = np.tile(visSSreshaped, (len(good_ant(fname)), 1, 1))
+
+    return visSS_Ave
+
+    
+
+
+
+
+    
+
 
 
     
