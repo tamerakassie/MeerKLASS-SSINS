@@ -148,7 +148,7 @@ file_path = 'stacked_visSS60Dishes1.npy'
 np.save(file_path, stacked_visSS)
 
 
-print(f"Sky Subtraction of Dishes saved as pickle file: {pickle_file_path}")
+print(f"Sky Subtraction of Dishes saved as a numpy array: {pickle_file_path}")
 
                                                                                                                154,0-1       Bot
 
